@@ -1,0 +1,51 @@
+/* reset */
+*{
+	padding:0;
+	margin:0;
+	vertical-align:baseline;
+	box-sizing:border-box;
+	list-style:none;
+	outline:none;
+	text-decoration:none;
+	font-family:arial, sans-serif;
+}
+
+.wrapper{
+	width: 95%;
+	max-width:500px;
+	margin: 0 auto;
+	padding:15px 0;
+}
+
+.center{
+	margin:0 auto;
+}
+
+.input{
+	border:1px solid darkred;
+	padding:15px;
+	width: 100%;
+	font-size:22px;
+	color:darkred;
+	margin: 15px auto;
+}
+
+.list{
+	width: 100%;
+}
+
+.list-item{
+	color:darkred;
+	font-size:20px;
+	padding:15px;
+	background: darkred;
+	color:#FFF;
+	margin:15px auto;
+	width: 100%;
+}
+
+.title , .list-title{
+	color:darkred;
+	font-weight:bold;
+	text-align:center;
+}
