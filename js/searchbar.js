@@ -11,14 +11,14 @@ var searchbar = {
 
 	init : function(){
 		document.querySelector( searchbar.config.elements.bar ).addEventListener( searchbar.config.event , function( e ){
-			var searchString = this.value.trim();
+			var searchString = this.value.trim().toLowerCase();
 
 			var itemSearch = document.querySelectorAll( searchbar.config.elements.items );
 			var qtd = itemSearch.length;
 
 			for (var i = 0; i < qtd; i++) {
 
-				var tag = itemSearch[ i ].getAttribute( searchbar.config.tagAttribute ); 
+				var tag = itemSearch[ i ].getAttribute( searchbar.config.tagAttribute ).toLowerCase(); 
 
 				if( tag.includes( searchString ) ){
 					itemSearch[ i ].style.display = '';
