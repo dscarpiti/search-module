@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<link rel="stylesheet" href="css/style.css">
+	<title>JS Search Module</title>
+</head>
+<body>
+	<div class="wrapper">
+		<h1 class="title">Search Bar</h1>
+		<section>
+            <div class="container-fluid search-form">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 hidden-xs">
+                  
+                            <input type="text" class="input form-control minimal" placeholder="Buscar" data-search="bar">
+                        </fieldset>
+                        <span class="error-message" data-unfind style="display:none;">Não encontramos nenhum resultado para esse termo</span>
+                        <div data-match="container" style="display:none;" class="match-keywords">
+                            <b>Tags:</b> <span data-match="keywords"></span>
+                            <div>
+                                <a href="javascript:void(0);" data-clear="results">Limpar resultados</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav class="nav">
+                <!--<a class="ga-menu-container" data-dropdown="menu" data-active>-->
+                <!--    <i class="ga-menu-bars"></i>-->
+                <!--</a>-->
+                <ul class="list" data-dropdown="target">
+                    <li class="list-item" data-search="item" data-item="introducao">Introdução</li>
+                    <li class="list-item" data-scroll="menu" data-search="item" data-item="tipografia">Tipografia</li>
+                    <li class="list-item" data-search="item" data-item="cores">Cores</li>
+                    <li class="list-item" data-search="item" data-item="botoes">Botões</li>
+                    <li class="list-item" data-search="item" data-item="formularios">Formulários</li>
+                    <li class="list-item" data-search="item" data-item="icones">Ícones</li>
+                    <li class="list-item" data-search="item" data-item="navegacao">Navegação</li>
+                    <li class="list-item"  data-search="item" data-item="paineis">Painéis</li>
+                    <li class="list-item"  data-search="item" data-item="cards">Cards</li>
+                    <li class="list-item"  data-search="item" data-item="modais">Modais</li>
+                    <li class="list-item"  data-search="item" data-item="imagens">Imagens</li>
+                    <li class="list-item"  data-search="item" data-item="loader">Loader</li>
+                    <li class="list-item" data-search="item" data-item="grid">Grid</li>
+                    <li class="list-item" data-search="item" data-item="alertas">Alertas</li>
+                </ul>
+            </nav>
+        </section>
+	</div>
+	<!-- CHARSET UTF-8 FOR ENCODING -->
+	<script src="js/searchbar.js" charset="UTF-8"></script>
+</body>
+</html>
