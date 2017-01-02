@@ -10,30 +10,45 @@
 <body>
 	<div class="wrapper">
 		<h1 class="title">Search Bar</h1>
-		<input type="text" data-search="bar" class="input center" placeholder="Digite aqui sua busca">
-		<section data-search="result center">
-			<dl class="list">
-				<dt class="list-title">Items totais</dt>
-				<dd data-search="item" class="list-item" data-tag="1">Item 1</dd>
-				<dd data-search="item" class="list-item" data-tag="2;3">Item 2 e 3</dd>
-				<dd data-search="item" class="list-item" data-tag="3;4">Item 3 e 4</dd>
-				<dd data-search="item" class="list-item" data-tag="5">Item 5</dd>
-				<dd data-search="item" class="list-item" data-tag="5;6">Item 5 e 6</dd>
-				<dd data-search="item" class="list-item" data-tag="6;7;8">Item 6 , 7 e 8</dd>
-				<dd data-search="item" class="list-item" data-tag="9">Item 9</dd>
-				<dd data-search="item" class="list-item" data-tag="10">Item 10</dd>
-				<dd data-search="item" class="list-item" data-tag="11">Item 11</dd>
-				<dd data-search="item" class="list-item" data-tag="12">Item 12</dd>
-				<dd data-search="item" class="list-item" data-tag="13;14;15">Item 13 , 14 e 15</dd>
-				<dd data-search="item" class="list-item" data-tag="16">Item 16</dd>
-				<dd data-search="item" class="list-item" data-tag="17">item 17</dd>
-				<dd data-search="item" class="list-item" data-tag="18">Item 18</dd>
-				<dd data-search="item" class="list-item" data-tag="19">Item 19</dd>
-				<dd data-search="item" class="list-item" data-tag="20">Item 20</dd>
-				<dd data-search="item" class="list-item" data-tag="21">Item 21</dd>
-				<dd data-search="item" class="list-item" data-tag="22;23">Item 22 e 23</dd>
-			</dl>
-		</section>
+		<section>
+            <div class="container-fluid search-form">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 hidden-xs">
+                  
+                            <input type="text" class="input form-control minimal" placeholder="Buscar" data-search="bar">
+                        </fieldset>
+                        <span class="error-message" data-unfind style="display:none;">Não encontramos nenhum resultado para esse termo</span>
+                        <div data-match="container" style="display:none;" class="match-keywords">
+                            <b>Tags:</b> <span data-match="keywords"></span>
+                            <div>
+                                <a href="javascript:void(0);" data-clear="results">Limpar resultados</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav class="nav">
+                <!--<a class="ga-menu-container" data-dropdown="menu" data-active>-->
+                <!--    <i class="ga-menu-bars"></i>-->
+                <!--</a>-->
+                <ul class="list" data-dropdown="target">
+                    <li class="list-item" data-search="item" data-item="introducao">Introdução</li>
+                    <li class="list-item" data-scroll="menu" data-search="item" data-item="tipografia">Tipografia</li>
+                    <li class="list-item" data-search="item" data-item="cores">Cores</li>
+                    <li class="list-item" data-search="item" data-item="botoes">Botões</li>
+                    <li class="list-item" data-search="item" data-item="formularios">Formulários</li>
+                    <li class="list-item" data-search="item" data-item="icones">Ícones</li>
+                    <li class="list-item" data-search="item" data-item="navegacao">Navegação</li>
+                    <li class="list-item"  data-search="item" data-item="paineis">Painéis</li>
+                    <li class="list-item"  data-search="item" data-item="cards">Cards</li>
+                    <li class="list-item"  data-search="item" data-item="modais">Modais</li>
+                    <li class="list-item"  data-search="item" data-item="imagens">Imagens</li>
+                    <li class="list-item"  data-search="item" data-item="loader">Loader</li>
+                    <li class="list-item" data-search="item" data-item="grid">Grid</li>
+                    <li class="list-item" data-search="item" data-item="alertas">Alertas</li>
+                </ul>
+            </nav>
+        </section>
 	</div>
 	<!-- CHARSET UTF-8 FOR ENCODING -->
 	<script src="js/searchbar.js" charset="UTF-8"></script>
