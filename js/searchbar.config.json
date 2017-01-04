@@ -25,9 +25,7 @@
 		
 		"grid" : [ "malha" , "grid" , "grade" , "colunas" , "coluna" , "bootstrap" , "gutter" , "intervalo" , "align" , "alinhamento" ] ,
 		
-		"alertas" : [ "alert" , "alerts" , "alerta" , "alertas" , "tooltip" , "tooltips" , "balão" , "balao" , "balãozinho" , "balaozinho" , "informação" , "informações" , "informacao" , "informacoes" , "flutuante" , "mensagem" , "mensagens" ] ,
-		
-		"tabelas" : [ "tabelas" , "tabela" , "lista" , "listas" ]
+		"alertas" : [ "alert" , "alerts" , "alerta" , "alertas" , "tooltip" , "tooltips" , "balão" , "balao" , "balãozinho" , "balaozinho" , "informação" , "informações" , "informacao" , "informacoes" , "flutuante" , "mensagem" , "mensagens" ]
 	} ,
 	"notKeywords" : [ "de" , "da" , "do" , "das" , "dos" , "com" , "sem" , "para" , "em" , "no" , "na" , "nos" , "nas" , "e" , "ou" ]
 }
