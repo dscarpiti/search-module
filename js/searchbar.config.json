@@ -1,0 +1,33 @@
+{ "items" :	{
+		"introducao" : [ "introdução" ] ,
+		
+		"tipografia" : [ "tipografia"  , "tipografias" , "tipo" , "tipos" , "font" , "fonte" , "fontes" , "letras" , "letra" , "corpo" , "texto" , "textos" , "título" , "títulos" , "peso" , "estilo" , "estilos" , "h1", "h2" , "titulo" , "titulo" , "caracteres" ] ,
+		
+		"cores" : [ "color" , "cromático" , "cor" , "cores" , "paleta" , "hexadecimal" , "tons" , "tom" , "cinza" , "escuro" , "claro" , "azul" , "vermelho" ] ,
+		
+		"botoes": [ "button" , "buttons" , "botão" , "botões" , "botao" , "botoes" , "hover" , "mouse" , "over" , "click" , "down" , "cta" , "call to action" , "action" , "ação" , "acao" , "clicks" , "click" , "habilitado" , "desabilitado" ] ,
+		
+		"formularios" : [ "form" , "formulário" , "formulários" , "formulario" , "formularios" , "campo" , "campos" , "preenchimento" , "inserir" , "ativo" , "erro" , "escolha" , "combo" , "box" , "máscara" , "label" , "múltipla" , "multipla" , "seleção" , "mascara" , "selecao" ] ,
+		
+		"icones" : [ "icon" , "icones" , "icone" , "ícones" , "ícone" , "simbolo" , "símbolo" , "simbolos" , "símbolos" , "vetor" , "fonte" , "kit" , "caracteres" , "especiais" ] ,
+		
+		"navegacao" : [ "nav" , "navegacao" , "navegação" , "menu" , "menus" , "navegar" , "categoria" , "lista" , "itens" , "listas" , "filtro" , "filtros" ] ,
+		
+		"paineis" : [ "panel" , "paíneis" , "painel" , "paineis" , "box" , "link" , "links" , "acesso" , "informações" , "informação" , "infomacoes" , "informacao" ] ,
+		
+		"cards" : [ "card" , "cards" , "box" , "cta" , "call to action" , "button" , "buttons" , "botão" , "botao" , "botoes" , "informações" , "informação" , "infomacoes" , "informacao" ] ,
+		
+		"modais" : [ "modal" , "modais" , "ligthbox" , "lightboxes" , "alert" , "alerts" , "alerta" , "alertas" , "alertar" ] ,
+		
+		"imagens" : [ "img" , "imagem" , "imagens" , "fotos" , "foto" , "banners" , "banner" , "dimensão" , "dimensao" , "dimensões" , "dimensoes" , "peso" , "pesos" , "formato" , "formatos" , "hero" , "heros" , "capa" , "capas" , "principal" , "acessibilidade" , "jpeg" , "jpg" , "png" , "gif" ] ,
+		
+		"loader" : [ "load" , "loading" , "loader" , "loaders" , "carregando" , "carregar" , "aguarde" , "modal" , "lightbox" ] ,
+		
+		"grid" : [ "malha" , "grid" , "grade" , "colunas" , "coluna" , "bootstrap" , "gutter" , "intervalo" , "align" , "alinhamento" ] ,
+		
+		"alertas" : [ "alert" , "alerts" , "alerta" , "alertas" , "tooltip" , "tooltips" , "balão" , "balao" , "balãozinho" , "balaozinho" , "informação" , "informações" , "informacao" , "informacoes" , "flutuante" , "mensagem" , "mensagens" ] ,
+		
+		"tabelas" : [ "tabelas" , "tabela" , "lista" , "listas" ]
+	} ,
+	"notKeywords" : [ "de" , "da" , "do" , "das" , "dos" , "com" , "sem" , "para" , "em" , "no" , "na" , "nos" , "nas" , "e" , "ou" ]
+}

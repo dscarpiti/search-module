@@ -1,6 +1,6 @@
 var searchbar = {
 	config : {
-		url : 'js/tags.json' ,
+		url : 'js/searchbar.config.json' ,
 		event : 'change' ,
 		tagAttribute : 'data-tag' ,
 		elements : {
@@ -13,7 +13,7 @@ var searchbar = {
 		} ,
 		itemsFind : 0 ,
 		itemsFindTags : [] ,
-		notKeywords : [ 'de' , 'da' , 'do' , 'das' , 'dos' , 'com' , 'sem' , 'para' , 'em' , 'no' , 'na' , 'nos' , 'nas' , 'e' , 'ou' ]
+		notKeywords : []
 	} ,
 	
 	load : function( callback ){
@@ -23,9 +23,10 @@ var searchbar = {
 		ajax.onreadystatechange = function() {
 			if ( this.readyState == 4 && this.status == 200 ) {
 				var dataRES = JSON.parse( this.responseText );
-				dataRES = dataRES.items;
-				for ( var item in dataRES ){
-					document.querySelector( '[data-item="'+ item +'"]' ).dataset.tag = dataRES[ item ].join(';');
+				items = dataRES.items;
+				searchbar.config.notKeywords = dataRES.notKeywords;
+				for ( var item in items ){
+					document.querySelector( '[data-item="'+ item +'"]' ).dataset.tag = items[ item ].join(';');
 				}
 				
 				if ( callback ){
@@ -38,46 +39,56 @@ var searchbar = {
 		ajax.send();
 	} ,
 	
+	queryElements : function(){
+		searchbar.config.elements.bar = document.querySelector( searchbar.config.elements.bar );
+		searchbar.config.elements.unfind = document.querySelector( searchbar.config.elements.unfind );
+		searchbar.config.elements.keyMatches = document.querySelector( searchbar.config.elements.keyMatches );
+		searchbar.config.elements.matchesContainer = document.querySelector( searchbar.config.elements.matchesContainer );
+		searchbar.config.elements.clearResults = document.querySelector( searchbar.config.elements.clearResults );
+		searchbar.config.elements.items = document.querySelectorAll( searchbar.config.elements.items );
+	} ,
+	
 	
 	error : {
 		show : function(){
-			document.querySelector( searchbar.config.elements.bar ).className += " has-error";
-			document.querySelector( searchbar.config.elements.unfind ).style.display = '';
+			searchbar.config.elements.bar.className += " has-error";
+			searchbar.config.elements.unfind.style.display = '';
 		} ,
 		hide : function(){
-			document.querySelector( searchbar.config.elements.bar ).className = document.querySelector( searchbar.config.elements.bar ).className.replace( "has-error" , "" );
-			document.querySelector( searchbar.config.elements.unfind ).style.display = 'none';
+			searchbar.config.elements.bar.className = searchbar.config.elements.bar.className.replace( "has-error" , "" );
+			searchbar.config.elements.unfind.style.display = 'none';
 		}
 	} ,
 	
 	tags : {
 		show : function(){
 			if( searchbar.config.itemsFindTags.length ){
-				document.querySelector( searchbar.config.elements.matchesContainer ).style.display = '';
-				var tags = searchbar.config.itemsFindTags.join( ' , ' );
-				document.querySelector( searchbar.config.elements.keyMatches ).innerHTML = tags;
+				searchbar.config.elements.matchesContainer.style.display = '';
+				searchbar.config.elements.keyMatches.innerHTML = searchbar.config.itemsFindTags.join( ' , ' );
 			}
 		} , 
 		hide : function(){
-			document.querySelector( searchbar.config.elements.matchesContainer ).style.display = 'none';
+			searchbar.config.elements.matchesContainer.style.display = 'none';
 		}
 	} ,
 	
 	form : {
 		clear : function(){
-			document.querySelector( searchbar.config.elements.bar ).value = "";
+			searchbar.config.elements.bar.value = "";
 			searchbar.tags.show();
 		} , 
 		trigger : function(){
 			var event = document.createEvent( 'HTMLEvents' );
 			event.initEvent( 'change' , true , false );
-			document.querySelector( searchbar.config.elements.bar ).dispatchEvent( event );
+			searchbar.config.elements.bar.dispatchEvent( event );
 		}
 	} ,
 
 	init : function(){
 		
-		document.querySelector( searchbar.config.elements.clearResults ).addEventListener( 'click' , function(){
+		searchbar.queryElements();
+		
+		searchbar.config.elements.clearResults.addEventListener( 'click' , function(){
 			searchbar.config.itemsFind = 0;
 			searchbar.form.clear();
 			searchbar.error.hide();
@@ -86,16 +97,15 @@ var searchbar = {
 			searchbar.tags.hide();
 		});
 		
-		document.querySelector( searchbar.config.elements.bar ).addEventListener( searchbar.config.event , function( e ){
+		searchbar.config.elements.bar.addEventListener( searchbar.config.event , function( e ){
 			var searchString = this.value.trim().toLowerCase().split( " " );
 
-			var itemSearch = document.querySelectorAll( searchbar.config.elements.items );
-			var qtd = itemSearch.length;
+			var qtd = searchbar.config.elements.items.length;
 			searchbar.config.itemsFindTags = [];
 			
 			
 			for (var i = 0; i < qtd; i++) {
-				var tag = itemSearch[ i ].getAttribute( searchbar.config.tagAttribute ).toString().toLowerCase();
+				var tag = searchbar.config.elements.items[ i ].getAttribute( searchbar.config.tagAttribute ).toString().toLowerCase();
 				var match = false;
 				
 				for ( var k in searchString ){
@@ -108,11 +118,11 @@ var searchbar = {
 				}
 				
 				if( match ){
-					itemSearch[ i ].style.display = '';
+					searchbar.config.elements.items[ i ].style.display = '';
 					searchbar.config.itemsFind += 1;
 				}
 				else{
-					itemSearch[ i ].style.display = 'none';
+					searchbar.config.elements.items[ i ].style.display = 'none';
 				}
 			}
 			
@@ -136,8 +146,6 @@ var searchbar = {
 			searchbar.config.itemsFind = 0;
 			
 		});
-		
-		console.log( 'searchbar: started' );
 	}
 };
 
